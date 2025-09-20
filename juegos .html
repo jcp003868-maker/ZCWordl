@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juegos - Mega ZC World</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gray-900 text-white">
+
+    <!-- Header / Navegación -->
+    <header class="bg-gray-900/80 backdrop-blur-sm sticky top-0 z-50 shadow-lg shadow-indigo-500/10">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold text-white tracking-wider">
+                Mega <span class="text-indigo-400">ZC</span> World
+            </a>
+            <div class="hidden md:flex space-x-6 items-center">
+                <a href="peliculas.html" class="hover:text-indigo-400 transition-colors duration-300">Películas</a>
+                <a href="juegos.html" class="text-indigo-400 font-bold">Juegos</a>
+                <a href="apps.html" class="hover:text-indigo-400 transition-colors duration-300">Aplicaciones</a>
+            </div>
+            <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </nav>
+        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4 space-y-2">
+             <a href="peliculas.html" class="block hover:text-indigo-400 transition-colors duration-300">Películas</a>
+             <a href="juegos.html" class="block text-indigo-400 font-bold">Juegos</a>
+             <a href="apps.html" class="block hover:text-indigo-400 transition-colors duration-300">Aplicaciones</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Título de la sección -->
+        <section class="py-16 bg-gray-800/50">
+            <div class="container mx-auto px-6 text-center">
+                <h1 class="text-4xl md:text-5xl font-black tracking-tight">Catálogo de <span class="text-indigo-400">Juegos</span></h1>
+                <p class="text-lg text-indigo-100 mt-2">Sumérgete en nuestra colección completa de videojuegos.</p>
+            </div>
+        </section>
+        
+        <!-- Catálogo de Juegos -->
+        <section id="catalogo-juegos" class="py-20">
+            <div class="container mx-auto px-6">
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+                    <!-- Juego 1 -->
+                    <a href="#" class="block"><div class="bg-gray-800 rounded-xl overflow-hidden shadow-lg card-hover-effect h-full"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Call_of_Duty_Modern_Warfare_2019_Logo.svg/1280px-Call_of_Duty_Modern_Warfare_2019_Logo.svg.png" alt="[Logo de Call of Duty Modern Warfare]" class="w-full h-64 object-contain bg-black p-4"><div class="p-6"><h3 class="font-bold text-xl mb-2">Modern Warfare</h3><p class="text-gray-400 text-sm">Shooter / Acción</p></div></div></a>
+                    
+                    <!-- Juego 2 -->
+                    <a href="#" class="block"><div class="bg-gray-800 rounded-xl overflow-hidden shadow-lg card-hover-effect h-full"><img src="https://images.unsplash.com/photo-1552820728-8b83bb6b773f?q=80&w=500&auto=format&fit=crop" alt="[Imagen de una persona jugando videojuegos]" class="w-full h-64 object-cover"><div class="p-6"><h3 class="font-bold text-xl mb-2">Neón Racer</h3><p class="text-gray-400 text-sm">Carreras / Arcade</p></div></div></a>
+                    
+                    <!-- Juego 3 -->
+                    <a href="#" class="block"><div class="bg-gray-800 rounded-xl overflow-hidden shadow-lg card-hover-effect h-full"><img src="https://images.unsplash.com/photo-1593305842732-5f11dfa29935?q=80&w=500&auto=format&fit=crop" alt="[Imagen de un paisaje de fantasía]" class="w-full h-64 object-cover"><div class="p-6"><h3 class="font-bold text-xl mb-2">Crónicas de Eldoria</h3><p class="text-gray-400 text-sm">RPG / Aventura</p></div></div></a>
+                    
+                    <!-- Juego 4 -->
+                    <a href="#" class="block"><div class="bg-gray-800 rounded-xl overflow-hidden shadow-lg card-hover-effect h-full"><img src="https://images.unsplash.com/photo-1599409333939-2b10a50514f7?q=80&w=500&auto=format&fit=crop" alt="[Imagen de un laberinto abstracto]" class="w-full h-64 object-cover"><div class="p-6"><h3 class="font-bold text-xl mb-2">Puzzles Mentales</h3><p class="text-gray-400 text-sm">Puzzle / Estrategia</p></div></div></a>
+                    
+                    <!-- Juego 5 -->
+                    <a href="#" class="block"><div class="bg-gray-800 rounded-xl overflow-hidden shadow-lg card-hover-effect h-full"><img src="https://images.unsplash.com/photo-1627843563095-2df5320b2798?q=80&w=500&auto=format&fit=crop" alt="[Imagen de una ciudad futurista cyberpunk]" class="w-full h-64 object-cover"><div class="p-6"><h3 class="font-bold text-xl mb-2">Cyberpunk Mercenaries</h3><p class="text-gray-400 text-sm">RPG / Acción</p></div></div></a>
+
+                    <!-- Juego 6 -->
+                    <a href="#" class="block"><div class="bg-gray-800 rounded-xl overflow-hidden shadow-lg card-hover-effect h-full"><img src="https://images.unsplash.com/photo-1579952363873-27f3bade9f55?q=80&w=500&auto=format&fit=crop" alt="[Imagen de un balón de fútbol en un estadio]" class="w-full h-64 object-cover"><div class="p-6"><h3 class="font-bold text-xl mb-2">Football Pro 2025</h3><p class="text-gray-400 text-sm">Deportes / Simulación</p></div></div></a>
+
+                    <!-- Juego 7 -->
+                    <a href="#" class="block"><div class="bg-gray-800 rounded-xl overflow-hidden shadow-lg card-hover-effect h-full"><img src="https://images.unsplash.com/photo-1542751371-3321a7569513?q=80&w=500&auto=format&fit=crop" alt="[Imagen de una arena de e-sports]" class="w-full h-64 object-cover"><div class="p-6"><h3 class="font-bold text-xl mb-2">Arena de Campeones</h3><p class="text-gray-400 text-sm">MOBA / Estrategia</p></div></div></a>
+
+                    <!-- Juego 8 -->
+                    <a href="#" class="block"><div class="bg-gray-800 rounded-xl overflow-hidden shadow-lg card-hover-effect h-full"><img src="https://images.unsplash.com/photo-1550745165-9bc0b252726a?q=80&w=500&auto=format&fit=crop" alt="[Imagen de consolas y juegos retro]" class="w-full h-64 object-cover"><div class="p-6"><h3 class="font-bold text-xl mb-2">Pixel Adventure</h3><p class="text-gray-400 text-sm">Plataformas / Retro</p></div></div></a>
+
+                    <!-- Juego 9 -->
+                    <a href="#" class="block"><div class="bg-gray-800 rounded-xl overflow-hidden shadow-lg card-hover-effect h-full"><img src="https://images.unsplash.com/photo-1605372223299-0d4148b012c3?q=80&w=500&auto=format&fit=crop" alt="[Imagen de un coche deportivo de rally]" class="w-full h-64 object-cover"><div class="p-6"><h3 class="font-bold text-xl mb-2">Rally Extremo</h3><p class="text-gray-400 text-sm">Carreras / Simulación</p></div></div></a>
+
+                    <!-- Juego 10 -->
+                    <a href="#" class="block"><div class="bg-gray-800 rounded-xl overflow-hidden shadow-lg card-hover-effect h-full"><img src="https://images.unsplash.com/photo-1511875762322-6345037c7252?q=80&w=500&auto=format&fit=crop" alt="[Imagen de una nave espacial en el cosmos]" class="w-full h-64 object-cover"><div class="p-6"><h3 class="font-bold text-xl mb-2">Odisea Galáctica</h3><p class="text-gray-400 text-sm">Estrategia / 4X</p></div></div></a>
+
+                    <!-- Juego 11 -->
+                    <a href="#" class="block"><div class="bg-gray-800 rounded-xl overflow-hidden shadow-lg card-hover-effect h-full"><img src="https://images.unsplash.com/photo-1580234810443-741d4b685161?q=80&w=500&auto=format&fit=crop" alt="[Imagen de una casa embrujada]" class="w-full h-64 object-cover"><div class="p-6"><h3 class="font-bold text-xl mb-2">La Mansión del Terror</h3><p class="text-gray-400 text-sm">Terror / Supervivencia</p></div></div></a>
+
+                    <!-- Juego 12 -->
+                    <a href="#" class="block"><div class="bg-gray-800 rounded-xl overflow-hidden shadow-lg card-hover-effect h-full"><img src="https://images.unsplash.com/photo-1612287230202-95a041628d26?q=80&w=500&auto=format&fit=crop" alt="[Imagen abstracta de fantasía para un battle royale]" class="w-full h-64 object-cover"><div class="p-6"><h3 class="font-bold text-xl mb-2">Battle Royale Definitivo</h3><p class="text-gray-400 text-sm">Acción / Battle Royale</p></div></div></a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-900 border-t border-gray-700/50">
+        <div class="container mx-auto px-6 py-8 text-center text-gray-400">
+            <a href="index.html" class="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-3 px-8 rounded-lg transition-transform duration-300 hover:scale-105 inline-block mb-6">Volver al Inicio</a>
+            <p>&copy; 2025 Mega ZC World. Todos los derechos reservados.</p>
+            <p class="text-sm mt-2">Creado con pasión para el entretenimiento digital.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Script para menú móvil
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+
+</body>
+</html>
+

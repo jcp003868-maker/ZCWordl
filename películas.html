@@ -1,0 +1,114 @@
+<!DOCTYPE html><html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ZC Tech - Películas</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #42275a, #734b6d);
+      color: #fff;
+      line-height: 1.6;
+    }
+    header {
+      background: rgba(0, 0, 0, 0.7);
+      text-align: center;
+      padding: 2rem;
+    }
+    header h1 {
+      font-size: 2.3rem;
+      background: linear-gradient(90deg, #ff4081, #00d9ff, #ffea00);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    nav ul {
+      display: flex;
+      justify-content: center;
+      list-style: none;
+      gap: 2rem;
+      flex-wrap: wrap;
+      margin-top: 1rem;
+    }
+    nav a {
+      color: #00d9ff;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+    nav a:hover {
+      color: #ffea00;
+    }
+    section {
+      padding: 3rem 2rem;
+      text-align: center;
+    }
+    section h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: #ffea00;
+    }
+    .card-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+      max-width: 1000px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .card {
+      display: block;
+      text-decoration: none;
+      background: linear-gradient(135deg, rgba(255, 64, 129, 0.9), rgba(255, 234, 0, 0.9));
+      border-radius: 15px;
+      padding: 1.5rem;
+      font-weight: bold;
+      color: #000;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .card:hover {
+      transform: scale(1.07);
+      box-shadow: 0 0 20px rgba(0, 217, 255, 0.7);
+    }
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background: rgba(0,0,0,0.85);
+      font-size: 0.9rem;
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>ZC Tech - Películas</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="juegos.html">Juegos</a></li>
+        <li><a href="apps.html">Aplicaciones</a></li>
+      </ul>
+    </nav>
+  </header>  <section>
+    <h2>🍿 Catálogo de Películas</h2>
+    <p>Explora clásicos, estrenos recientes y recomendaciones para todos los gustos.</p>
+    <div class="card-container">
+      <a href="https://www.warnerbros.com/movies/inception" target="_blank" rel="noopener noreferrer" class="card">Inception</a>
+      <a href="https://www.paramount.com/movies/interstellar" target="_blank" rel="noopener noreferrer" class="card">Interstellar</a>
+      <a href="https://www.sonypictures.com/movies/spider-manintothespider-verse" target="_blank" rel="noopener noreferrer" class="card">Spider-Man: Into the Spider-Verse</a>
+      <a href="https://www.studioghibli.com.au/spirit-away/" target="_blank" rel="noopener noreferrer" class="card">El Viaje de Chihiro</a>
+      <a href="https://www.marvel.com/movies/avengers-endgame" target="_blank" rel="noopener noreferrer" class="card">Avengers: Endgame</a>
+      <a href="https://www.warnerbros.com/movies/dark-knight/" target="_blank" rel="noopener noreferrer" class="card">The Dark Knight</a>
+      <a href="https://www.parasite-movie.com/" target="_blank" rel="noopener noreferrer" class="card">Parasite</a>
+      <a href="https://www.lalaland.movie/" target="_blank" rel="noopener noreferrer" class="card">La La Land</a>
+    </div>
+  </section>  <footer>
+    <p>© 2025 ZC Tech | Página de Películas</p>
+  </footer>
+</body>
+</html>

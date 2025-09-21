@@ -1,4 +1,5 @@
-<!DOCTYPE html><html lang="es">
+<!DOCTYPE html>
+<html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,14 +15,21 @@
       background: linear-gradient(135deg, #141e30, #243b55);
       color: #fff;
       line-height: 1.6;
+      padding-top: 120px; /* 👈 espacio para que el header no tape el contenido */
     }
     header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
       background: rgba(0, 0, 0, 0.7);
       text-align: center;
       padding: 2rem;
-      position: sticky;
-      top: 0;
       z-index: 1000;
+      transition: top 0.4s ease;
+    }
+    header.hide {
+      top: -120px;
     }
     header h1 {
       font-size: 2.5rem;
@@ -116,9 +124,12 @@
         <li><a href="#juegos">Juegos</a></li>
         <li><a href="#aplicaciones">Aplicaciones</a></li>
         <li><a href="#peliculas">Películas</a></li>
+        <li><a href="#datapacks">Data Packs</a></li>
       </ul>
     </nav>
-  </header>  <section id="juegos">
+  </header>
+
+  <section id="juegos">
     <h2>🎮 Juegos</h2>
     <p>Aquí encontrarás recomendaciones y novedades del mundo gamer, desde clásicos hasta los más recientes lanzamientos.</p>
     <div class="card-container">
@@ -127,7 +138,9 @@
       <a href="https://innersloth.com/gameAmongUs.php" target="_blank" rel="noopener noreferrer" class="card">Among Us</a>
     </div>
     <a href="juegos.html" class="subpage-link">Ver más juegos →</a>
-  </section>  <section id="aplicaciones">
+  </section>
+
+  <section id="aplicaciones">
     <h2>📱 Aplicaciones</h2>
     <p>Explora apps útiles, creativas y divertidas para tu día a día.</p>
     <div class="card-container">
@@ -136,7 +149,9 @@
       <a href="https://play.google.com/store/apps/details?id=com.niksoftware.snapseed" target="_blank" rel="noopener noreferrer" class="card">Snapseed</a>
     </div>
     <a href="aplicaciones.html" class="subpage-link">Ver más aplicaciones →</a>
-  </section>  <section id="peliculas">
+  </section>
+
+  <section id="peliculas">
     <h2>🍿 Películas</h2>
     <p>Recomendaciones de películas imperdibles, desde clásicos hasta los estrenos más recientes.</p>
     <div class="card-container">
@@ -145,8 +160,36 @@
       <a href="https://www.sonypictures.com/movies/spider-manintothespider-verse" target="_blank" rel="noopener noreferrer" class="card">Spider-Man: Into the Spider-Verse</a>
     </div>
     <a href="películas.html" class="subpage-link">Ver más películas →</a>
-  </section>  <footer>
+  </section>
+
+  <section id="data packs">
+    <h2>📂 Data Packs</h2>
+    <p>Descarga packs de equipos, mods y contenido personalizado.</p>
+    <div class="card-container">
+      <a href="https://drive.google.com/xxxx" target="_blank" rel="noopener noreferrer" class="card">Rōnin FC Pack</a>
+      <a href="https://www.mediafire.com/file/yyyy/team-x-pack.zip/file" target="_blank" rel="noopener noreferrer" class="card">Team X Pack</a>
+      <a href="https://mega.nz/file/zzzz" target="_blank" rel="noopener noreferrer" class="card">Ultimate Mod</a>
+    </div>
+    <a href="data packs.html" class="subpage-link">Ver más data packs →</a>
+  </section>
+
+  <footer>
     <p>© 2025 ZC Tech | Hecho con ❤️ en HTML y CSS</p>
   </footer>
+
+  <script>
+    let lastScroll = 0;
+    const header = document.querySelector("header");
+
+    window.addEventListener("scroll", () => {
+      const currentScroll = window.pageYOffset;
+      if (currentScroll > lastScroll) {
+        header.classList.add("hide");
+      } else {
+        header.classList.remove("hide");
+      }
+      lastScroll = currentScroll;
+    });
+  </script>
 </body>
 </html>

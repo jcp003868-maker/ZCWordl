@@ -1,4 +1,5 @@
-<!DOCTYPE html><html lang="es">
+<!DOCTYPE html>
+<html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,11 +15,21 @@
       background: linear-gradient(135deg, #42275a, #734b6d);
       color: #fff;
       line-height: 1.6;
+      padding-top: 120px;
     }
     header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
       background: rgba(0, 0, 0, 0.7);
       text-align: center;
       padding: 2rem;
+      z-index: 1000;
+      transition: top 0.4s ease;
+    }
+    header.hide {
+      top: -120px;
     }
     header h1 {
       font-size: 2.3rem;
@@ -92,9 +103,13 @@
         <li><a href="index.html">Inicio</a></li>
         <li><a href="juegos.html">Juegos</a></li>
         <li><a href="aplicaciones.html">Aplicaciones</a></li>
+        <li><a href="películas.html">Películas</a></li>
+        <li><a href="data packs.html">Data Packs</a></li>
       </ul>
     </nav>
-  </header>  <section>
+  </header>
+
+  <section>
     <h2>🍿 Catálogo de Películas</h2>
     <p>Explora clásicos, estrenos recientes y recomendaciones para todos los gustos.</p>
     <div class="card-container">
@@ -107,8 +122,25 @@
       <a href="https://www.parasite-movie.com/" target="_blank" rel="noopener noreferrer" class="card">Parasite</a>
       <a href="https://www.lalaland.movie/" target="_blank" rel="noopener noreferrer" class="card">La La Land</a>
     </div>
-  </section>  <footer>
+  </section>
+
+  <footer>
     <p>© 2025 ZC Tech | Página de Películas</p>
   </footer>
+
+  <script>
+    let lastScroll = 0;
+    const header = document.querySelector("header");
+
+    window.addEventListener("scroll", () => {
+      const currentScroll = window.pageYOffset;
+      if (currentScroll > lastScroll) {
+        header.classList.add("hide");
+      } else {
+        header.classList.remove("hide");
+      }
+      lastScroll = currentScroll;
+    });
+  </script>
 </body>
 </html>

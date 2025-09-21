@@ -1,75 +1,23 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Redirección - ZC Tech</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: linear-gradient(135deg, #141e30, #243b55);
-      color: #fff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      margin: 0;
-    }
-    .caja {
-      background: rgba(0,0,0,0.85);
-      padding: 2rem;
-      border-radius: 12px;
-      text-align: center;
-      max-width: 400px;
-      width: 100%;
-    }
-    h1 { font-size: 1.5rem; margin-bottom: 1rem; color: #ffea00; }
-    p { margin-bottom: 1.5rem; }
-    a {
-      display: block;
-      margin: 0.5rem 0;
-      padding: 0.7rem 1rem;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: background 0.3s ease;
-    }
-    .apoyar { background: #ff4081; color: #fff; }
-    .apoyar:hover { background: #ffea00; color: #000; }
-    .directo { background: #00d9ff; color: #000; }
-    .directo:hover { background: #ffea00; color: #000; }
-  </style>
-</head>
-<body>
-  <div class="caja">
-    <h1>Redirección</h1>
-    <p>Elige cómo quieres acceder al contenido:</p>
-    <a id="enlaceApoyar" class="apoyar" target="_blank">Apoyar (ArkLinks)</a>
-    <a id="enlaceDirecto" class="directo" target="_blank">Ir directo</a>
-  </div>
+<script>
+  const urlParams = new URLSearchParams(window.location.search);
+  const link = urlParams.get("link");
 
-  <script>
-    const urlParams = new URLSearchParams(window.location.search);
-    const link = urlParams.get("link");
+  if (link) {
+    document.getElementById("enlaceDirecto").href = link;
 
-    if (link) {
-      document.getElementById("enlaceDirecto").href = link;
-
-      fetch(`/api/acortar?link=${encodeURIComponent(link)}`)
-        .then(res => res.json())
-        .then(data => {
-          if (data.corto) {
-            document.getElementById("enlaceApoyar").href = data.corto;
-          } else {
-            document.getElementById("enlaceApoyar").remove();
-          }
-        })
-        .catch(() => {
+    fetch(`/api/shorten?link=${encodeURIComponent(link)}`)
+      .then(res => res.json())
+      .then(data => {
+        if (data.corto) {
+          document.getElementById("enlaceApoyar").href = data.corto;
+        } else {
           document.getElementById("enlaceApoyar").remove();
-        });
-    } else {
-      document.querySelector(".caja").innerHTML = "<h1>Error</h1><p>Falta el enlace.</p>";
-    }
-  </script>
-</body>
-</html>
+        }
+      })
+      .catch(() => {
+        document.getElementById("enlaceApoyar").remove();
+      });
+  } else {
+    document.querySelector(".caja").innerHTML = "<h1>Error</h1><p>Falta el enlace.</p>";
+  }
+</script>

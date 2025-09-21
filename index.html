@@ -2,7 +2,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mi Web Creativa</title>
+  <title>ZC Tech</title>
   <style>
     * {
       margin: 0;
@@ -16,7 +16,7 @@
       line-height: 1.6;
     }
     header {
-      background: rgba(0, 0, 0, 0.6);
+      background: rgba(0, 0, 0, 0.7);
       text-align: center;
       padding: 2rem;
       position: sticky;
@@ -26,12 +26,16 @@
     header h1 {
       font-size: 2.5rem;
       margin-bottom: 0.5rem;
+      background: linear-gradient(90deg, #ff4081, #00d9ff, #ffea00);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
     nav ul {
       display: flex;
       justify-content: center;
       list-style: none;
       gap: 2rem;
+      flex-wrap: wrap;
     }
     nav a {
       color: #00d9ff;
@@ -40,7 +44,7 @@
       transition: color 0.3s ease;
     }
     nav a:hover {
-      color: #ff4081;
+      color: #ffea00;
     }
     section {
       min-height: 100vh;
@@ -54,7 +58,8 @@
     section h2 {
       font-size: 2.2rem;
       margin-bottom: 1rem;
-      color: #00d9ff;
+      color: #ffea00;
+      text-shadow: 0 0 10px rgba(255,255,255,0.5);
     }
     section p {
       max-width: 700px;
@@ -68,25 +73,42 @@
       max-width: 1000px;
     }
     .card {
-      background: rgba(255, 255, 255, 0.1);
+      background: linear-gradient(135deg, rgba(255, 64, 129, 0.9), rgba(0, 217, 255, 0.9));
       border-radius: 15px;
       padding: 1.5rem;
-      transition: transform 0.3s ease;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      font-weight: bold;
+      color: #fff;
     }
     .card:hover {
-      transform: scale(1.05);
+      transform: scale(1.07);
+      box-shadow: 0 0 20px rgba(255, 234, 0, 0.7);
     }
     footer {
       text-align: center;
       padding: 1rem;
-      background: rgba(0,0,0,0.8);
+      background: rgba(0,0,0,0.85);
       font-size: 0.9rem;
+    }
+    .subpage-link {
+      margin-top: 1rem;
+      display: inline-block;
+      padding: 0.5rem 1rem;
+      background: #ff4081;
+      color: #fff;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: background 0.3s ease;
+    }
+    .subpage-link:hover {
+      background: #ffea00;
+      color: #000;
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>Mi Web Creativa</h1>
+    <h1>ZC Tech</h1>
     <nav>
       <ul>
         <li><a href="#juegos">Juegos</a></li>
@@ -96,12 +118,15 @@
     </nav>
   </header>  <section id="juegos">
     <h2>🎮 Juegos</h2>
-    <p>Aquí encontrarás recomendaciones y novedades del mundo gamer, desde clásicos hasta los más recientes lanzamientos.</p>
+    <p>Recomendaciones y novedades del mundo gamer, desde clásicos hasta lanzamientos recientes.</p>
     <div class="card-container">
       <div class="card">Minecraft</div>
       <div class="card">The Legend of Zelda</div>
       <div class="card">Among Us</div>
+      <div class="card">Fortnite</div>
+      <div class="card">Elden Ring</div>
     </div>
+    <a href="juegos.html" class="subpage-link">Ver más juegos →</a>
   </section>  <section id="apps">
     <h2>📱 Aplicaciones</h2>
     <p>Explora apps útiles, creativas y divertidas para tu día a día.</p>
@@ -109,17 +134,23 @@
       <div class="card">Notion</div>
       <div class="card">Spotify</div>
       <div class="card">Snapseed</div>
+      <div class="card">Canva</div>
+      <div class="card">Telegram</div>
     </div>
+    <a href="apps.html" class="subpage-link">Ver más aplicaciones →</a>
   </section>  <section id="peliculas">
     <h2>🍿 Películas</h2>
-    <p>Recomendaciones de películas imperdibles, desde clásicos hasta los estrenos más recientes.</p>
+    <p>Recomendaciones imperdibles, desde clásicos hasta estrenos recientes.</p>
     <div class="card-container">
       <div class="card">Inception</div>
       <div class="card">Interstellar</div>
       <div class="card">Spider-Man: Into the Spider-Verse</div>
+      <div class="card">El Viaje de Chihiro</div>
+      <div class="card">Avengers: Endgame</div>
     </div>
+    <a href="peliculas.html" class="subpage-link">Ver más películas →</a>
   </section>  <footer>
-    <p>© 2025 Mi Web Creativa | Hecho con ❤️ en HTML y CSS</p>
+    <p>© 2025 ZC Tech | Hecho con ❤️ en HTML y CSS</p>
   </footer>
 </body>
 </html>

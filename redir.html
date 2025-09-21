@@ -1,75 +1,77 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Redirección - ZC Tech</title>
+  <title>Redirección ZC Tech</title>
   <style>
     body {
       font-family: Arial, sans-serif;
-      background: linear-gradient(135deg, #141e30, #243b55);
+      background: #0f172a;
       color: #fff;
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
       height: 100vh;
-      margin: 0;
-    }
-    .caja {
-      background: rgba(0,0,0,0.85);
-      padding: 2rem;
-      border-radius: 12px;
       text-align: center;
-      max-width: 400px;
-      width: 100%;
+      padding: 1rem;
     }
-    h1 { font-size: 1.5rem; margin-bottom: 1rem; color: #ffea00; }
-    p { margin-bottom: 1.5rem; }
-    a {
+    h1 {
+      margin-bottom: 1rem;
+      font-size: 1.5rem;
+    }
+    .btn {
       display: block;
       margin: 0.5rem 0;
-      padding: 0.7rem 1rem;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: background 0.3s ease;
+      padding: 1rem;
+      border: none;
+      border-radius: 10px;
+      font-size: 1rem;
+      cursor: pointer;
+      width: 200px;
+      transition: transform 0.2s;
     }
-    .apoyar { background: #ff4081; color: #fff; }
-    .apoyar:hover { background: #ffea00; color: #000; }
-    .directo { background: #00d9ff; color: #000; }
-    .directo:hover { background: #ffea00; color: #000; }
+    .btn:hover {
+      transform: scale(1.05);
+    }
+    .support {
+      background: linear-gradient(90deg, #f43f5e, #ec4899);
+      color: white;
+    }
+    .direct {
+      background: linear-gradient(90deg, #3b82f6, #06b6d4);
+      color: white;
+    }
   </style>
 </head>
 <body>
-  <div class="caja">
-    <h1>Redirección</h1>
-    <p>Elige cómo quieres acceder al contenido:</p>
-    <a id="enlaceApoyar" class="apoyar" target="_blank">Apoyar (ArkLinks)</a>
-    <a id="enlaceDirecto" class="directo" target="_blank">Ir directo</a>
-  </div>
+  <h1>Elige cómo continuar 🚀</h1>
+  <button id="supportBtn" class="btn support">Apoyar</button>
+  <button id="directBtn" class="btn direct">Ir directo</button>
 
   <script>
-    const urlParams = new URLSearchParams(window.location.search);
-    const link = urlParams.get("link");
+    // Tomamos el parámetro "link" de la URL
+    const params = new URLSearchParams(window.location.search);
+    const originalLink = params.get("link");
 
-    if (link) {
-      document.getElementById("enlaceDirecto").href = link;
-
-      // Aquí apuntamos al archivo shorten.js en /api
-      fetch(`/api/shorten?link=${encodeURIComponent(link)}`)
+    if (!originalLink) {
+      document.body.innerHTML = "<h1>❌ Falta el parámetro 'link'</h1>";
+    } else {
+      // Llamamos a la API /api/shorten en tu proyecto de Vercel
+      fetch(`/api/shorten?link=${encodeURIComponent(originalLink)}`)
         .then(res => res.json())
         .then(data => {
-          if (data.corto) {
-            document.getElementById("enlaceApoyar").href = data.corto;
-          } else {
-            document.getElementById("enlaceApoyar").remove();
-          }
+          document.getElementById("supportBtn").onclick = () => {
+            window.location.href = data.corto;
+          };
+          document.getElementById("directBtn").onclick = () => {
+            window.location.href = data.original;
+          };
         })
         .catch(() => {
-          document.getElementById("enlaceApoyar").remove();
+          document.body.innerHTML = "<h1>⚠️ Error al conectar con el acortador</h1>";
         });
-    } else {
-      document.querySelector(".caja").innerHTML = "<h1>Error</h1><p>Falta el enlace.</p>";
     }
   </script>
 </body>

@@ -5,131 +5,105 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ZC Tech - Inicio</title>
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(135deg, #141e30, #243b55);
-      color: #fff;
-      line-height: 1.6;
-      padding: 2rem;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to bottom, #2c5364, #203a43, #0f2027);
+      color: white;
       text-align: center;
+      margin: 0;
+      padding: 0;
     }
-    h1 {
-      font-size: 2.8rem;
-      margin-bottom: 0.5rem;
-      background: linear-gradient(90deg, #ff4081, #00d9ff, #ffea00);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+    header {
+      padding: 20px;
     }
-    h2 {
-      font-size: 1.3rem;
-      color: #ffea00;
-      margin-bottom: 2rem;
+    header h1 {
+      font-size: 2em;
+      color: cyan;
     }
     section {
-      margin: 3rem 0;
+      margin: 40px 0;
     }
-    section h3 {
-      font-size: 1.8rem;
-      margin-bottom: 1rem;
-      color: #ffea00;
+    h2 {
+      font-size: 1.5em;
+      color: yellow;
     }
-    .card-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 1.2rem;
-      margin-top: 1rem;
-      max-width: 900px;
-      margin-inline: auto;
-    }
-    .card {
+    .btn {
       display: block;
-      text-decoration: none;
-      border-radius: 15px;
-      padding: 1.2rem;
+      margin: 10px auto;
+      padding: 15px;
+      width: 250px;
+      border-radius: 10px;
+      background: linear-gradient(45deg, #ff416c, #ff4b2b, #1e90ff);
+      color: white;
       font-weight: bold;
-      color: #fff;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      text-decoration: none;
+      transition: transform 0.2s;
     }
-    .card:hover {
-      transform: scale(1.07);
-      box-shadow: 0 0 20px rgba(255,255,255,0.7);
+    .btn:hover {
+      transform: scale(1.05);
     }
-    .juegos { background: linear-gradient(135deg, #ff4081, #00d9ff); }
-    .apps { background: linear-gradient(135deg, #00d9ff, #ffea00); color: #000; }
-    .pelis { background: linear-gradient(135deg, #ff4081, #ffea00); color: #000; }
-    .packs { background: linear-gradient(135deg, #00d9ff, #8e2de2); }
     .ver-mas {
+      background: yellow;
+      color: black;
       display: inline-block;
-      margin-top: 1rem;
-      padding: 0.6rem 1.2rem;
-      background: #ff4081;
-      color: #fff;
+      margin-top: 15px;
+      padding: 10px 20px;
       border-radius: 8px;
-      text-decoration: none;
       font-weight: bold;
-      transition: background 0.3s ease;
+      text-decoration: none;
     }
-    .ver-mas:hover { background: #ffea00; color: #000; }
     footer {
-      margin-top: 3rem;
-      text-align: center;
-      padding: 1rem;
-      background: rgba(0,0,0,0.7);
-      font-size: 0.9rem;
+      margin-top: 40px;
+      padding: 20px;
+      font-size: 0.9em;
+      background: rgba(0,0,0,0.3);
     }
   </style>
 </head>
 <body>
-  <h1>ZC Tech</h1>
-  <h2>Tu espacio para Juegos, Aplicaciones, Películas y Data Packs</h2>
+  <header>
+    <h1>ZC Tech</h1>
+    <p>Tu espacio para Juegos, Aplicaciones, Películas y Data Packs</p>
+  </header>
 
   <!-- Juegos -->
   <section>
-    <h3>🎮 Juegos</h3>
-    <div class="card-container">
-      <a href="https://www.playstation.com/es-es/god-of-war/" target="_blank" class="card juegos">God of War</a>
-      <a href="https://www.hollowknight.com/" target="_blank" class="card juegos">Hollow Knight</a>
-      <a href="https://genshin.hoyoverse.com/" target="_blank" class="card juegos">Genshin Impact</a>
-    </div>
+    <h2>🎮 Juegos</h2>
+    <a href="redir.html?link=https://www.playstation.com/es-es/god-of-war/" class="btn">God of War</a>
+    <a href="redir.html?link=https://www.hollowknight.com/" class="btn">Hollow Knight</a>
+    <a href="redir.html?link=https://genshin.hoyoverse.com/" class="btn">Genshin Impact</a>
     <a href="juegos.html" class="ver-mas">Ver más juegos →</a>
   </section>
 
   <!-- Aplicaciones -->
   <section>
-    <h3>📱 Aplicaciones</h3>
-    <div class="card-container">
-      <a href="https://www.notion.so/" target="_blank" class="card apps">Notion</a>
-      <a href="https://open.spotify.com/" target="_blank" class="card apps">Spotify</a>
-      <a href="https://www.canva.com/" target="_blank" class="card apps">Canva</a>
-    </div>
+    <h2>📱 Aplicaciones</h2>
+    <a href="redir.html?link=https://www.notion.so/" class="btn">Notion</a>
+    <a href="redir.html?link=https://www.spotify.com/" class="btn">Spotify</a>
+    <a href="redir.html?link=https://snapseed.online/" class="btn">Snapseed</a>
     <a href="aplicaciones.html" class="ver-mas">Ver más aplicaciones →</a>
   </section>
 
   <!-- Películas -->
   <section>
-    <h3>🍿 Películas</h3>
-    <div class="card-container">
-      <a href="https://www.warnerbros.com/movies/inception" target="_blank" class="card pelis">Inception</a>
-      <a href="https://www.paramount.com/movies/interstellar" target="_blank" class="card pelis">Interstellar</a>
-      <a href="https://www.sonypictures.com/movies/spider-manintothespider-verse" target="_blank" class="card pelis">Spider-Man: Into the Spider-Verse</a>
-    </div>
-    <a href="películas.html" class="ver-mas">Ver más películas →</a>
+    <h2>🍿 Películas</h2>
+    <a href="redir.html?link=https://www.disneyplus.com/movies/avengers-endgame" class="btn">Avengers: Endgame</a>
+    <a href="redir.html?link=https://www.netflix.com/title/70131314" class="btn">Inception</a>
+    <a href="redir.html?link=https://www.hbomax.com/mx/es/movies/the-dark-knight" class="btn">The Dark Knight</a>
+    <a href="peliculas.html" class="ver-mas">Ver más películas →</a>
   </section>
 
   <!-- Data Packs -->
   <section>
-    <h3>📂 Data Packs</h3>
-    <div class="card-container">
-      <a href="https://drive.google.com/xxxx" target="_blank" class="card packs">Rōnin FC Pack</a>
-      <a href="https://www.mediafire.com/file/yyyy/team-x-pack.zip/file" target="_blank" class="card packs">Team X Pack</a>
-      <a href="https://mega.nz/file/zzzz" target="_blank" class="card packs">Ultimate Mod</a>
-    </div>
-    <a href="datapacks.html" class="ver-mas">Ver más data packs →</a>
+    <h2>💾 Data Packs</h2>
+    <a href="redir.html?link=https://www.planetminecraft.com/resources/datapacks/" class="btn">Minecraft Packs</a>
+    <a href="redir.html?link=https://vanillatweaks.net/picker/datapacks/" class="btn">Vanilla Tweaks</a>
+    <a href="redir.html?link=https://www.curseforge.com/minecraft/customization" class="btn">CurseForge</a>
+    <a href="datapacks.html" class="ver-mas">Ver más Data Packs →</a>
   </section>
 
   <footer>
-    <p>© 2025 ZC Tech | Página de Inicio</p>
+    © 2025 ZC Tech | Página de Inicio
   </footer>
 </body>
 </html>

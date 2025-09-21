@@ -73,6 +73,8 @@
       max-width: 1000px;
     }
     .card {
+      display: block;
+      text-decoration: none;
       background: linear-gradient(135deg, rgba(255, 64, 129, 0.9), rgba(0, 217, 255, 0.9));
       border-radius: 15px;
       padding: 1.5rem;
@@ -83,12 +85,6 @@
     .card:hover {
       transform: scale(1.07);
       box-shadow: 0 0 20px rgba(255, 234, 0, 0.7);
-    }
-    footer {
-      text-align: center;
-      padding: 1rem;
-      background: rgba(0,0,0,0.85);
-      font-size: 0.9rem;
     }
     .subpage-link {
       margin-top: 1rem;
@@ -104,6 +100,12 @@
       background: #ffea00;
       color: #000;
     }
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background: rgba(0,0,0,0.85);
+      font-size: 0.9rem;
+    }
   </style>
 </head>
 <body>
@@ -118,37 +120,31 @@
     </nav>
   </header>  <section id="juegos">
     <h2>🎮 Juegos</h2>
-    <p>Recomendaciones y novedades del mundo gamer, desde clásicos hasta lanzamientos recientes.</p>
+    <p>Aquí encontrarás recomendaciones y novedades del mundo gamer, desde clásicos hasta los más recientes lanzamientos.</p>
     <div class="card-container">
-      <div class="card">Minecraft</div>
-      <div class="card">The Legend of Zelda</div>
-      <div class="card">Among Us</div>
-      <div class="card">Fortnite</div>
-      <div class="card">Elden Ring</div>
+      <a href="https://www.minecraft.net" target="_blank" rel="noopener noreferrer" class="card">Minecraft</a>
+      <a href="https://www.zelda.com/" target="_blank" rel="noopener noreferrer" class="card">The Legend of Zelda</a>
+      <a href="https://innersloth.com/gameAmongUs.php" target="_blank" rel="noopener noreferrer" class="card">Among Us</a>
     </div>
     <a href="juegos.html" class="subpage-link">Ver más juegos →</a>
   </section>  <section id="apps">
     <h2>📱 Aplicaciones</h2>
     <p>Explora apps útiles, creativas y divertidas para tu día a día.</p>
     <div class="card-container">
-      <div class="card">Notion</div>
-      <div class="card">Spotify</div>
-      <div class="card">Snapseed</div>
-      <div class="card">Canva</div>
-      <div class="card">Telegram</div>
+      <a href="https://www.notion.so/" target="_blank" rel="noopener noreferrer" class="card">Notion</a>
+      <a href="https://open.spotify.com/" target="_blank" rel="noopener noreferrer" class="card">Spotify</a>
+      <a href="https://play.google.com/store/apps/details?id=com.niksoftware.snapseed" target="_blank" rel="noopener noreferrer" class="card">Snapseed</a>
     </div>
-    <a href="apps.html" class="subpage-link">Ver más aplicaciones →</a>
+    <a href="aplicaciones.html" class="subpage-link">Ver más aplicaciones →</a>
   </section>  <section id="peliculas">
     <h2>🍿 Películas</h2>
-    <p>Recomendaciones imperdibles, desde clásicos hasta estrenos recientes.</p>
+    <p>Recomendaciones de películas imperdibles, desde clásicos hasta los estrenos más recientes.</p>
     <div class="card-container">
-      <div class="card">Inception</div>
-      <div class="card">Interstellar</div>
-      <div class="card">Spider-Man: Into the Spider-Verse</div>
-      <div class="card">El Viaje de Chihiro</div>
-      <div class="card">Avengers: Endgame</div>
+      <a href="https://www.warnerbros.com/movies/inception" target="_blank" rel="noopener noreferrer" class="card">Inception</a>
+      <a href="https://www.paramount.com/movies/interstellar" target="_blank" rel="noopener noreferrer" class="card">Interstellar</a>
+      <a href="https://www.sonypictures.com/movies/spider-manintothespider-verse" target="_blank" rel="noopener noreferrer" class="card">Spider-Man: Into the Spider-Verse</a>
     </div>
-    <a href="peliculas.html" class="subpage-link">Ver más películas →</a>
+    <a href="películas.html" class="subpage-link">Ver más películas →</a>
   </section>  <footer>
     <p>© 2025 ZC Tech | Hecho con ❤️ en HTML y CSS</p>
   </footer>

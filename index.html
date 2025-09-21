@@ -1,147 +1,125 @@
-<!DOCTYPE html>
-<html lang="es" class="scroll-smooth">
+<!DOCTYPE html><html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mega ZC World - Tu Universo de Entretenimiento</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mi Web Creativa</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #141e30, #243b55);
+      color: #fff;
+      line-height: 1.6;
+    }
+    header {
+      background: rgba(0, 0, 0, 0.6);
+      text-align: center;
+      padding: 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+    nav ul {
+      display: flex;
+      justify-content: center;
+      list-style: none;
+      gap: 2rem;
+    }
+    nav a {
+      color: #00d9ff;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+    nav a:hover {
+      color: #ff4081;
+    }
+    section {
+      min-height: 100vh;
+      padding: 4rem 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+    section h2 {
+      font-size: 2.2rem;
+      margin-bottom: 1rem;
+      color: #00d9ff;
+    }
+    section p {
+      max-width: 700px;
+      margin-bottom: 2rem;
+    }
+    .card-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+      width: 100%;
+      max-width: 1000px;
+    }
+    .card {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 15px;
+      padding: 1.5rem;
+      transition: transform 0.3s ease;
+    }
+    .card:hover {
+      transform: scale(1.05);
+    }
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background: rgba(0,0,0,0.8);
+      font-size: 0.9rem;
+    }
+  </style>
 </head>
-<body class="bg-gray-900 text-white">
-
-    <!-- Header / Navegación -->
-    <header class="bg-gray-900/80 backdrop-blur-sm sticky top-0 z-50 shadow-lg shadow-indigo-500/10">
-        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <!-- El logo ahora apunta a index.html para volver al inicio -->
-            <a href="index.html" class="text-2xl font-bold text-white tracking-wider">
-                Mega <span class="text-indigo-400">ZC</span> World
-            </a>
-            <div class="hidden md:flex space-x-6 items-center">
-                <!-- Enlaces a las páginas de catálogo -->
-                <a href="peliculas.html" class="hover:text-indigo-400 transition-colors duration-300">Películas</a>
-                <a href="juegos.html" class="hover:text-indigo-400 transition-colors duration-300">Juegos</a>
-                <a href="apps.html" class="hover:text-indigo-400 transition-colors duration-300">Aplicaciones</a>
-            </div>
-            <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
-            </button>
-        </nav>
-        <!-- Menú Móvil -->
-        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4 space-y-2">
-            <a href="peliculas.html" class="block hover:text-indigo-400 transition-colors duration-300">Películas</a>
-            <a href="juegos.html" class="block hover:text-indigo-400 transition-colors duration-300">Juegos</a>
-            <a href="apps.html" class="block hover:text-indigo-400 transition-colors duration-300">Aplicaciones</a>
-        </div>
-    </header>
-
-    <main>
-        <!-- Sección de Héroe -->
-        <section class="relative h-[60vh] md:h-[80vh] flex items-center justify-center text-center overflow-hidden">
-             <div class="absolute inset-0 gradient-bg opacity-90 z-10"></div>
-             <div class="absolute inset-0 bg-no-repeat bg-cover bg-center z-0" style="background-image: url('https://images.unsplash.com/photo-1534796636912-3b95b3ab5986?q=80&w=1920&auto=format&fit=crop'); opacity: 0.2;"></div>
-             <div class="relative z-20 container mx-auto px-6">
-                 <h1 class="text-4xl md:text-6xl lg:text-7xl font-black tracking-tight mb-4">Tu Universo de Entretenimiento Digital</h1>
-                 <p class="text-lg md:text-xl max-w-3xl mx-auto text-indigo-100 mb-8">
-                     Descubre las últimas películas, juega los títulos más emocionantes y explora aplicaciones innovadoras, todo en un solo lugar.
-                 </p>
-                 <!-- Este enlace baja a la sección de películas en esta misma página -->
-                 <a href="#peliculas" class="bg-white text-indigo-700 font-bold py-3 px-8 rounded-full text-lg hover:bg-indigo-100 transition-transform duration-300 hover:scale-110 inline-block">
-                     Comienza a Explorar
-                 </a>
-             </div>
-        </section>
-
-        <!-- Sección de Películas -->
-        <section id="peliculas" class="py-20 bg-gray-900">
-            <div class="container mx-auto px-6">
-                <!-- El título de la sección es un enlace -->
-                <a href="peliculas.html" class="group">
-                    <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 group-hover:text-indigo-400 transition-colors duration-300">Películas <span class="text-indigo-400 group-hover:text-white">Destacadas</span></h2>
-                </a>
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-                    <!-- Las tarjetas individuales pueden enlazar a una página de detalle en el futuro -->
-                    <a href="#" class="block"><div class="bg-gray-800 rounded-xl overflow-hidden shadow-lg card-hover-effect h-full"><img src="https://images.unsplash.com/photo-1610296669228-602fa827fc1f?q=80&w=500&auto=format&fit=crop" alt="[Imagen de un casco de astronauta]" class="w-full h-96 object-cover"><div class="p-6"><h3 class="font-bold text-xl mb-2">Aventura Espacial</h3><p class="text-gray-400 text-sm">Ciencia Ficción / Acción</p></div></div></a>
-                    <a href="#" class="block"><div class="bg-gray-800 rounded-xl overflow-hidden shadow-lg card-hover-effect h-full"><img src="https://images.unsplash.com/photo-1505322262629-6a3a26a44132?q=80&w=500&auto=format&fit=crop" alt="[Imagen de un callejón oscuro]" class="w-full h-96 object-cover"><div class="p-6"><h3 class="font-bold text-xl mb-2">Misterio en la Ciudad</h3><p class="text-gray-400 text-sm">Suspenso / Drama</p></div></div></a>
-                    <a href="#" class="block"><div class="bg-gray-800 rounded-xl overflow-hidden shadow-lg card-hover-effect h-full"><img src="https://www.dropbox.com/scl/fi/e3mnb5p26pllvgt8d6zp0/yuppai.jpg?rlkey=4hiuszfra50fuo7fx57mizo1j&st=1e5wqs3n&dl=1" alt="[Imagen de Yuppai]" class="w-full h-96 object-cover"><div class="p-6"><h3 class="font-bold text-xl mb-2">Yuppai</h3><p class="text-gray-400 text-sm">Anime / Fantasía</p></div></div></a>
-                    <a href="#" class="block"><div class="bg-gray-800 rounded-xl overflow-hidden shadow-lg card-hover-effect h-full"><img src="https://images.unsplash.com/photo-1581333100578-936c9b5d38da?q=80&w=500&auto=format&fit=crop" alt="[Imagen de un superhéroe]" class="w-full h-96 object-cover"><div class="p-6"><h3 class="font-bold text-xl mb-2">Héroes Reunidos</h3><p class="text-gray-400 text-sm">Acción / Superhéroes</p></div></div></a>
-                </div>
-                <div class="text-center mt-12">
-                    <!-- Botón "Ver Todo" enlaza a la página de catálogo -->
-                    <a href="peliculas.html" class="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-3 px-8 rounded-lg transition-transform duration-300 hover:scale-105 inline-block">Ver Todas las Películas</a>
-                </div>
-            </div>
-        </section>
-
-        <!-- Sección de Juegos -->
-        <section id="juegos" class="py-20 bg-gray-800/50">
-            <div class="container mx-auto px-6">
-                <!-- El título de la sección es un enlace -->
-                <a href="juegos.html" class="group">
-                    <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 group-hover:text-indigo-400 transition-colors duration-300">Juegos <span class="text-indigo-400 group-hover:text-white">Populares</span></h2>
-                </a>
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-                    <a href="#" class="block"><div class="bg-gray-800 rounded-xl overflow-hidden shadow-lg card-hover-effect h-full"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Call_of_Duty_Modern_Warfare_2019_Logo.svg/1280px-Call_of_Duty_Modern_Warfare_2019_Logo.svg.png" alt="[Logo de Call of Duty]" class="w-full h-64 object-contain bg-black p-4"><div class="p-6"><h3 class="font-bold text-xl mb-2">Modern Warfare</h3><p class="text-gray-400 text-sm">Shooter / Acción</p></div></div></a>
-                    <a href="#" class="block"><div class="bg-gray-800 rounded-xl overflow-hidden shadow-lg card-hover-effect h-full"><img src="https://images.unsplash.com/photo-1552820728-8b83bb6b773f?q=80&w=500&auto=format=fit=crop" alt="[Imagen de persona jugando]" class="w-full h-64 object-cover"><div class="p-6"><h3 class="font-bold text-xl mb-2">Neón Racer</h3><p class="text-gray-400 text-sm">Carreras / Arcade</p></div></div></a>
-                    <a href="#" class="block"><div class="bg-gray-800 rounded-xl overflow-hidden shadow-lg card-hover-effect h-full"><img src="https://images.unsplash.com/photo-1593305842732-5f11dfa29935?q=80&w=500&auto=format=fit=crop" alt="[Imagen de mundo de fantasía]" class="w-full h-64 object-cover"><div class="p-6"><h3 class="font-bold text-xl mb-2">Mundo de Fantasía</h3><p class="text-gray-400 text-sm">RPG / Aventura</p></div></div></a>
-                    <a href="#" class="block"><div class="bg-gray-800 rounded-xl overflow-hidden shadow-lg card-hover-effect h-full"><img src="https://images.unsplash.com/photo-1599409333939-2b10a50514f7?q=80&w=500&auto=format=fit=crop" alt="[Imagen de un puzzle]" class="w-full h-64 object-cover"><div class="p-6"><h3 class="font-bold text-xl mb-2">Puzzles Mentales</h3><p class="text-gray-400 text-sm">Puzzle / Estrategia</p></div></div></a>
-                </div>
-                <div class="text-center mt-12">
-                    <!-- Botón "Ver Todo" enlaza a la página de catálogo -->
-                    <a href="juegos.html" class="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-3 px-8 rounded-lg transition-transform duration-300 hover:scale-105 inline-block">Ver Todos los Juegos</a>
-                </div>
-            </div>
-        </section>
-
-        <!-- Sección de Aplicaciones -->
-        <section id="apps" class="py-20 bg-gray-900">
-            <div class="container mx-auto px-6">
-                 <!-- El título de la sección es un enlace -->
-                <a href="apps.html" class="group">
-                    <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 group-hover:text-indigo-400 transition-colors duration-300">Aplicaciones <span class="text-indigo-400 group-hover:text-white">Esenciales</span></h2>
-                </a>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <a href="#" class="block"><div class="bg-gray-800 rounded-xl overflow-hidden shadow-lg card-hover-effect h-full"><img src="https://images.unsplash.com/photo-1553531384-411a247ccd76?q=80&w=500&auto=format=fit=crop" alt="[Imagen de editor de fotos]" class="w-full h-64 object-cover"><div class="p-6"><h3 class="font-bold text-xl mb-2">Editor de Fotos Pro</h3><p class="text-gray-400 text-sm">Productividad / Creatividad</p></div></div></a>
-                    <a href="#" class="block"><div class="bg-gray-800 rounded-xl overflow-hidden shadow-lg card-hover-effect h-full"><img src="https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?q=80&w=500&auto=format=fit=crop" alt="[Imagen de gestor de tareas]" class="w-full h-64 object-cover"><div class="p-6"><h3 class="font-bold text-xl mb-2">Gestor de Tareas</h3><p class="text-gray-400 text-sm">Organización</p></div></div></a>
-                    <a href="#" class="block"><div class="bg-gray-800 rounded-xl overflow-hidden shadow-lg card-hover-effect h-full"><img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=500&auto=format=fit=crop" alt="[Imagen de app de música]" class="w-full h-64 object-cover"><div class="p-6"><h3 class="font-bold text-xl mb-2">Música Sin Límites</h3><p class="text-gray-400 text-sm">Entretenimiento / Música</p></div></div></a>
-                </div>
-                 <div class="text-center mt-12">
-                    <!-- Botón "Ver Todo" enlaza a la página de catálogo -->
-                    <a href="apps.html" class="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-3 px-8 rounded-lg transition-transform duration-300 hover:scale-105 inline-block">Ver Todas las Aplicaciones</a>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer class="bg-gray-900 border-t border-gray-700/50">
-        <div class="container mx-auto px-6 py-8 text-center text-gray-400">
-            <p>&copy; 2025 Mega ZC World. Todos los derechos reservados.</p>
-            <p class="text-sm mt-2">Creado con pasión para el entretenimiento digital.</p>
-        </div>
-    </footer>
-
-    <script>
-        // Script para menú móvil
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
-        
-        mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-
-        const allMobileLinks = mobileMenu.querySelectorAll('a');
-        
-        allMobileLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden');
-            });
-        });
-    </script>
-
+<body>
+  <header>
+    <h1>Mi Web Creativa</h1>
+    <nav>
+      <ul>
+        <li><a href="#juegos">Juegos</a></li>
+        <li><a href="#apps">Aplicaciones</a></li>
+        <li><a href="#peliculas">Películas</a></li>
+      </ul>
+    </nav>
+  </header>  <section id="juegos">
+    <h2>🎮 Juegos</h2>
+    <p>Aquí encontrarás recomendaciones y novedades del mundo gamer, desde clásicos hasta los más recientes lanzamientos.</p>
+    <div class="card-container">
+      <div class="card">Minecraft</div>
+      <div class="card">The Legend of Zelda</div>
+      <div class="card">Among Us</div>
+    </div>
+  </section>  <section id="apps">
+    <h2>📱 Aplicaciones</h2>
+    <p>Explora apps útiles, creativas y divertidas para tu día a día.</p>
+    <div class="card-container">
+      <div class="card">Notion</div>
+      <div class="card">Spotify</div>
+      <div class="card">Snapseed</div>
+    </div>
+  </section>  <section id="peliculas">
+    <h2>🍿 Películas</h2>
+    <p>Recomendaciones de películas imperdibles, desde clásicos hasta los estrenos más recientes.</p>
+    <div class="card-container">
+      <div class="card">Inception</div>
+      <div class="card">Interstellar</div>
+      <div class="card">Spider-Man: Into the Spider-Verse</div>
+    </div>
+  </section>  <footer>
+    <p>© 2025 Mi Web Creativa | Hecho con ❤️ en HTML y CSS</p>
+  </footer>
 </body>
 </html>
-
-
-                                                                                                                                         

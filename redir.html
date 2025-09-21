@@ -15,7 +15,7 @@
       height: 100vh;
       margin: 0;
     }
-    .box {
+    .caja {
       background: rgba(0,0,0,0.85);
       padding: 2rem;
       border-radius: 12px;
@@ -23,11 +23,7 @@
       max-width: 400px;
       width: 100%;
     }
-    h1 {
-      font-size: 1.5rem;
-      margin-bottom: 1rem;
-      color: #ffea00;
-    }
+    h1 { font-size: 1.5rem; margin-bottom: 1rem; color: #ffea00; }
     p { margin-bottom: 1.5rem; }
     a {
       display: block;
@@ -38,36 +34,41 @@
       font-weight: bold;
       transition: background 0.3s ease;
     }
-    .support { background: #ff4081; color: #fff; }
-    .support:hover { background: #ffea00; color: #000; }
-    .direct { background: #00d9ff; color: #000; }
-    .direct:hover { background: #ffea00; color: #000; }
+    .apoyar { background: #ff4081; color: #fff; }
+    .apoyar:hover { background: #ffea00; color: #000; }
+    .directo { background: #00d9ff; color: #000; }
+    .directo:hover { background: #ffea00; color: #000; }
   </style>
 </head>
 <body>
-  <div class="box">
+  <div class="caja">
     <h1>Redirección</h1>
     <p>Elige cómo quieres acceder al contenido:</p>
-    <a id="supportLink" class="support" target="_blank">Apoyar (ArkLinks)</a>
-    <a id="directLink" class="direct" target="_blank">Ir directo</a>
+    <a id="enlaceApoyar" class="apoyar" target="_blank">Apoyar (ArkLinks)</a>
+    <a id="enlaceDirecto" class="directo" target="_blank">Ir directo</a>
   </div>
 
   <script>
     const urlParams = new URLSearchParams(window.location.search);
-    const link = urlParams.get("link");   // enlace original
-    const short = urlParams.get("short"); // enlace acortado (si existe)
+    const link = urlParams.get("link");
 
-    // Enlace directo siempre al original
-    document.getElementById("directLink").href = link;
+    if (link) {
+      document.getElementById("enlaceDirecto").href = link;
 
-    if (short) {
-      // Si se pasó un link acortado manual, lo usa
-      document.getElementById("supportLink").href = short;
+      fetch(`/api/acortar?link=${encodeURIComponent(link)}`)
+        .then(res => res.json())
+        .then(data => {
+          if (data.corto) {
+            document.getElementById("enlaceApoyar").href = data.corto;
+          } else {
+            document.getElementById("enlaceApoyar").remove();
+          }
+        })
+        .catch(() => {
+          document.getElementById("enlaceApoyar").remove();
+        });
     } else {
-      // Si no, genera uno automático con ArkLinks API
-      // ⚠️ Sustituye TU_API_KEY con la tuya de ArkLinks
-      document.getElementById("supportLink").href =
-        "https://arlinks.in/st?api=TU_API_KEY&url=" + encodeURIComponent(link);
+      document.querySelector(".caja").innerHTML = "<h1>Error</h1><p>Falta el enlace.</p>";
     }
   </script>
 </body>

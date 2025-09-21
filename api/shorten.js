@@ -1,10 +1,10 @@
 // api/shorten.js
 export default async function handler(req, res) {
   const { link } = req.query;
-  const apiToken = process.env.ARKLINKS_TOKEN; // ahora se lee desde Vercel
+  const apiToken = process.env.ARKLINKS_TOKEN;
 
   if (!link) {
-    return res.status(400).json({ error: "Falta el parámetro link" });
+    return res.status(400).json({ error: "Falta el enlace" });
   }
 
   try {
@@ -15,7 +15,7 @@ export default async function handler(req, res) {
     const shortUrl = await response.text();
 
     res.status(200).json({
-      short: shortUrl.trim(),
+      corto: shortUrl.trim(),
       original: link
     });
   } catch (err) {

@@ -1,93 +1,69 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ZC Tech - Juegos</title>
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(135deg, #1e3c72, #2a5298);
+      font-family: Arial, sans-serif;
+      background: #0f172a;
       color: #fff;
-      line-height: 1.6;
-      padding: 2rem;
+      margin: 0;
+      padding: 0;
       text-align: center;
+    }
+    header {
+      padding: 1rem;
     }
     h1 {
-      font-size: 2.5rem;
-      margin-bottom: 0.5rem;
-      background: linear-gradient(90deg, #ff4081, #00d9ff, #ffea00);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+      font-size: 2rem;
+      color: cyan;
+      margin: 0.5rem 0;
     }
     h2 {
-      font-size: 2rem;
-      margin: 2rem 0 1rem;
-      color: #ffea00;
+      color: yellow;
+      margin-bottom: 1rem;
     }
-    .card-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 1.5rem;
-      margin-top: 1.5rem;
-      max-width: 1000px;
-      margin-inline: auto;
-    }
-    .card {
+    .btn {
       display: block;
-      text-decoration: none;
-      background: linear-gradient(135deg, rgba(255, 64, 129, 0.9), rgba(0, 217, 255, 0.9));
-      border-radius: 15px;
-      padding: 1.5rem;
-      font-weight: bold;
-      color: #fff;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .card:hover {
-      transform: scale(1.07);
-      box-shadow: 0 0 20px rgba(255,234,0,0.7);
-    }
-    .inicio-btn {
-      display: inline-block;
-      margin-top: 2rem;
-      padding: 0.7rem 1.5rem;
-      background: #ff4081;
-      color: #fff;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: background 0.3s ease;
-    }
-    .inicio-btn:hover { background: #ffea00; color: #000; }
-    footer {
-      margin-top: 3rem;
-      text-align: center;
+      margin: 1rem auto;
       padding: 1rem;
-      background: rgba(0,0,0,0.7);
+      width: 250px;
+      border: none;
+      border-radius: 12px;
+      font-size: 1.1rem;
+      cursor: pointer;
+      color: #fff;
+      text-decoration: none;
+      background: linear-gradient(90deg, #ec4899, #3b82f6);
+      transition: transform 0.2s;
+    }
+    .btn:hover {
+      transform: scale(1.05);
+    }
+    footer {
+      margin-top: 2rem;
       font-size: 0.9rem;
+      color: #aaa;
     }
   </style>
 </head>
 <body>
-  <h1>ZC Tech</h1>
-  <h2>🎮 Catálogo de Juegos</h2>
+  <header>
+    <h1>ZC Tech</h1>
+    <h2>Página de Juegos</h2>
+  </header>
 
-  <div class="card-container">
-    <a href="https://www.playstation.com/es-es/god-of-war/" target="_blank" class="card">God of War</a>
-    <a href="https://ffvii-remake.square-enix-games.com/" target="_blank" class="card">Final Fantasy VII Remake</a>
-    <a href="https://www.hollowknight.com/" target="_blank" class="card">Hollow Knight</a>
-    <a href="https://www.leagueoflegends.com/" target="_blank" class="card">League of Legends</a>
-    <a href="https://genshin.hoyoverse.com/" target="_blank" class="card">Genshin Impact</a>
-    <a href="https://www.callofduty.com/warzone" target="_blank" class="card">Call of Duty: Warzone</a>
-    <a href="https://www.residentevil.com/re4/" target="_blank" class="card">Resident Evil 4 Remake</a>
-    <a href="https://www.nintendo.com/es-cl/store/products/super-mario-odyssey-switch/" target="_blank" class="card">Super Mario Odyssey</a>
-  </div>
-
-  <a href="index.html" class="inicio-btn">← Volver al Inicio</a>
+  <main>
+    <a href="redir.html?link=https://www.playstation.com/es-es/god-of-war/" class="btn">God of War</a>
+    <a href="redir.html?link=https://store.steampowered.com/app/39140/Final_Fantasy_VII/" class="btn">Final Fantasy VII Remake</a>
+    <a href="redir.html?link=https://www.hollowknight.com/" class="btn">Hollow Knight</a>
+    <a href="redir.html?link=https://www.leagueoflegends.com/es-es/" class="btn">League of Legends</a>
+  </main>
 
   <footer>
-    <p>© 2025 ZC Tech | Página de Juegos</p>
+    © 2025 ZC Tech | Página de Juegos
   </footer>
 </body>
 </html>
